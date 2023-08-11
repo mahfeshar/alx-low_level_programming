@@ -12,8 +12,9 @@
 int main(void)
 {
 	bool first_digit = true;
+	int i = 0;
 
-	for (int i = 0; i < 10; i++)
+	for (; i < 10; i++)
 	{
 		if (!first_digit)
 		{
