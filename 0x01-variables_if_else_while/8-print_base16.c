@@ -18,4 +18,5 @@ int main(void)
 	for (; c <= 'f'; c++)
 		putchar(c);
 	putchar('\n');
+	return (0);
 }
