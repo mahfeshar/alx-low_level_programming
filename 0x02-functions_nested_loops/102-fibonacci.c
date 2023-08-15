@@ -10,13 +10,13 @@
 
 int main(void)
 {
-	int i, x1 = 1, x2 = 2, sum;
+	long int i, x1 = 1, x2 = 2, sum;
 
 	printf("1, 2");
 	for (i = 0; i < 48; i++)
 	{
 		sum = x1 + x2;
-		printf(", %d", sum);
+		printf(", %ld", sum);
 		x1 = x2;
 		x2 = sum;
 	}
