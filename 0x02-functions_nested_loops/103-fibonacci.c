@@ -10,7 +10,7 @@
 
 int main(void)
 {
-	long int x1 = 1, x2 = 2, s = 3, sum = 3;
+	long int x1 = 1, x2 = 2, s = 3, sum = 2;
 
 	while (x2 <= 4000000)
 	{
