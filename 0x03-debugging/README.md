@@ -5,9 +5,9 @@ I learned about debugging, some methods of debugging manually and how to read er
 ## Header file:
 * [main.h](./main.h): Header file containing prototypes for all functions in this project
 
-`void positive_or_negative(int i);`
-`int largest_number(int a, int b, int c);`
-`void print_remaining_days(int month, int day, int year);`
+* `void positive_or_negative(int i);`
+* `int largest_number(int a, int b, int c);`
+* `void print_remaining_days(int month, int day, int year);`
 
 ## tests:
 * [tests](./tests): Folder of some tests

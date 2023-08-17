@@ -27,6 +27,7 @@ It's a practise for nested loops and functions.
 	* `void print_diagonal(int n);`
 	* `void print_square(int size);`
 	* `void print_triangle(int size);`
+	* `void print_number(int n);`
 
 ## Tasks:
 
@@ -71,3 +72,8 @@ It's a practise for nested loops and functions.
 	* [10-print_triangle.c](./10-print_triangle.c): C function that prints a triangle using the `#` character, followed by a new line.
 		* If the function receives size input of zero or less, only a new line is printed.
 
+* **11. The problem of distinguishing prime numbers from composite numbers and of resolving the latter into their prime factors is known to be one of the most important and useful in arithmetic**
+	* [100-prime_factor.c](./100-prime_factor.c): C program that prints the largest prime factor of the number `612852475143`, followed by a new line.
+
+* **12. Numbers have life; they're not just symbols on paper**
+	* [101-print_number.c](./101-print_number.c): C function that prints an integer without using `long`, arrays, pointers, or hard-coded special values.
