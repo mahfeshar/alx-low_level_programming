@@ -11,7 +11,7 @@
 char *leet(char *str)
 {
 	int i = 0, j;
-	char let[] = {'O', 'L', '.', 'E', 'A', '.', '.', 'T'};
+	char let[] = {'O', 'L', '!', 'E', 'A', '!', '!', 'T'};
 
 	while (str[i])
 	{
