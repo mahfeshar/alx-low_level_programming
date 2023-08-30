@@ -14,6 +14,9 @@ int _sqrt(int n, int i)
 	if (n < 1 || i >= n / 2)
 		return (-1);
 
+	else if (n == 1)
+		return (n);
+
 	else if (i * i == n)
 		return (i);
 

@@ -4,7 +4,7 @@
  * _strlen_recursion - returns the length of a string
  *
  * @s: string that I want to know it len
- * 
+ *
  * Return: integer for length of a string
  */
 
