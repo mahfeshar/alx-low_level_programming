@@ -14,9 +14,6 @@ int _sqrt(int n, int i)
 	if (n < 1 || i >= n / 2)
 		return (-1);
 
-	else if (n == 1)
-		return (n);
-
 	else if (i * i == n)
 		return (i);
 
@@ -35,6 +32,9 @@ int _sqrt(int n, int i)
 int _sqrt_recursion(int n)
 {
 	int i = 0;
+
+	if (n == 1)
+		return (1);
 
 	return (_sqrt(n, i));
 }
