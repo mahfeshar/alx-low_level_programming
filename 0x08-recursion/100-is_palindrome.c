@@ -8,8 +8,11 @@
 int len(char *s)
 {
 	int l = 0;
-	while (s[l])
-		l++;
+	if (*(s + l))
+	{
+		l += 1;
+		l += len(s + l);
+	}
 	return (l);
 }
 
