@@ -13,9 +13,12 @@ In this repo, I will add all tasks about C language.
 * [0x07. C - Even more pointers, arrays and strings](./0x07-pointers_arrays_strings)
 * [0x08. C - Recursion](./0x08-recursion)
 * [0x09. C - Static libraries](./0x09-static_libraries)
-* 
+* [0x0A. C - argc, argv](./0x0A-argc_argv)
 * [0x0B. C - malloc, free](./0x0B-malloc_free)
 * [0x0C. C - More malloc, free](./0x0C-more_malloc_free)
 * [0x0D. C - Preprocessor](./0x0D-preprocessor)
 * [0x0E. C - Structures, typedef](./0x0E-structures_typedef)
 * [0x0F. C - Function pointers](./0x0F-function_pointers)
+* [0x12. C - Singly linked lists](./0x12-singly_linked_lists)
+* [0x13. C - More singly linked lists](./0x13-more_singly_linked_lists)
+* [0x14. C - Bit manipulation](./0x14-bit_manipulation)
