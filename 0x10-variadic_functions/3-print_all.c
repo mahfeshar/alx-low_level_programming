@@ -15,6 +15,7 @@ void print_all(const char * const format, ...);
 void p_char(va_list arg)
 {
 	char c;
+
 	c = va_arg(arg, int);
 	printf("%c", c);
 }
