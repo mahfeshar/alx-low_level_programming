@@ -66,7 +66,7 @@ void p_str(va_list arg)
 
 void print_all(const char * const format, ...)
 {
-	int i, j;
+	int i = 0, j;
 	print_t prt[] = {
 		{"c", p_char},
 		{"i", p_int},
@@ -76,16 +76,18 @@ void print_all(const char * const format, ...)
 	va_list pa;
 
 	va_start(pa, format);
-	for (i = 0; i < 9; i++)
+	while (i < 9)
 	{
-		for (j = 0; j < 4 && *(prt[j].c) != *(format + i); j++)
-			;
+		j = 0;
+		while (j < 4 && *(prt[j].c) != *(format + i))
+			j++;
 		if (j < 4)
 		{
 			if (i)
 				printf(", ");
 			prt[j].print_f(pa);
 		}
+		i++;
 	}
 	printf("\n");
 	va_end(pa);
