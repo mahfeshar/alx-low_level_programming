@@ -1,0 +1,92 @@
+#include "variadic_functions.h"
+#include <stdio.h>
+
+void p_char(va_list arg);
+void p_int(va_list arg);
+void p_f(va_list arg);
+void p_s(va_list arg);
+void print_all(const char * const format, ...);
+
+/**
+ * p_char - print character
+ * @arg: argument
+ */
+
+void p_char(va_list arg)
+{
+	char c;
+
+	c = va_arg(arg, int);
+	printf("%c", c);
+}
+/**
+ * p_int - print integer
+ * @arg: argument
+ */
+
+void p_int(va_list arg)
+{
+	printf("%d", va_arg(arg, int));
+}
+
+/**
+ * p_f - print float
+ * @arg: argument
+ */
+
+void p_f(va_list arg)
+{
+	float f;
+
+	f = va_arg(arg, double);
+	printf("%f", f);
+}
+
+/**
+ * p_str - print string
+ * @arg: argument
+ */
+
+void p_str(va_list arg)
+{
+	char *str;
+
+	str = va_arg(arg, char *);
+	if (str)
+		printf("%s", str);
+	else
+		printf("(nil)");
+}
+
+/**
+ * print_all - prints anything
+ * @format: list of types of arguments passed to the function
+ * @...: arguments of diffrent data types
+ */
+
+void print_all(const char * const format, ...)
+{
+	int i, j;
+	print_t prt[] = {
+		{"c", p_char},
+		{"i", p_int},
+		{"f", p_f},
+		{"s", p_str}
+	};
+	va_list pa;
+
+	va_start(pa, format);
+	for (i = 0; i < 9; i++)
+	{
+		for (j = 0; j < 4 && *(prt[j].c) != *(format + i); j++)
+			;
+		if (j < 4)
+		{
+			if (i)
+				printf(", ");
+			prt[j].print_f(pa);
+		}
+	}
+	printf("\n");
+	va_end(pa);
+}
