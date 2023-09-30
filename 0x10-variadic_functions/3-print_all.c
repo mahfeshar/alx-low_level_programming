@@ -74,6 +74,7 @@ void print_all(const char * const format, ...)
 		{"s", p_str}
 	};
 	va_list pa;
+	char *s = "";
 
 	va_start(pa, format);
 	while (i < 9)
@@ -83,9 +84,9 @@ void print_all(const char * const format, ...)
 			j++;
 		if (j < 4)
 		{
-			if (i)
-				printf(", ");
+			printf("%s", s);
 			prt[j].print_f(pa);
+			s = ", ";
 		}
 		i++;
 	}
