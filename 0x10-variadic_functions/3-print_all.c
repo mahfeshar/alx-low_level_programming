@@ -52,10 +52,12 @@ void p_str(va_list arg)
 	char *str;
 
 	str = va_arg(arg, char *);
-	if (str)
-		printf("%s", str);
-	else
+	if (str == NULL)
+	{
 		printf("(nil)");
+		return;
+	}
+	printf("%s", str);
 }
 
 /**
