@@ -15,7 +15,6 @@ void print_all(const char * const format, ...);
 void p_char(va_list arg)
 {
 	char c;
-
 	c = va_arg(arg, int);
 	printf("%c", c);
 }
@@ -26,7 +25,10 @@ void p_char(va_list arg)
 
 void p_int(va_list arg)
 {
-	printf("%d", va_arg(arg, int));
+	int i;
+
+	i = va_arg(arg, int);
+	printf("%d", i);
 }
 
 /**
@@ -79,7 +81,7 @@ void print_all(const char * const format, ...)
 	char *s = "";
 
 	va_start(pa, format);
-	while (i < 9)
+	while (format && *(format + i))
 	{
 		j = 0;
 		while (j < 4 && *(prt[j].c) != *(format + i))
@@ -92,6 +94,6 @@ void print_all(const char * const format, ...)
 		}
 		i++;
 	}
-	printf("\n");
 	va_end(pa);
+	printf("\n");
 }
