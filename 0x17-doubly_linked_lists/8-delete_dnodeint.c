@@ -15,6 +15,8 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	if (head && *head)
 	{
 		len = dlistint_len(*head);
+		if (index > len)
+			return (-1);
 		if (len == 1)
 		{
 			*head = NULL;
