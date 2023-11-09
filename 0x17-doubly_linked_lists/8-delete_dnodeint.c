@@ -9,7 +9,7 @@
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	dlistint_t *curr = *head;
+	dlistint_t *curr = *head, *tmp = NULL;
 	unsigned int len = 0, iter_times = 0;
 
 	if (head && *head)
@@ -19,19 +19,26 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 			return (-1);
 		if (len == 1)
 		{
+			tmp = *head;
 			*head = NULL;
+			free(tmp);
 			return (1);
 		}
 		if (index == 0)
 			return (deleteFirstNode(head));
-		if (index == len)
-			return (deleteLastNode(head));
 		while (curr != NULL)
 		{
 			if (index == iter_times)
 			{
-				curr->prev->next = curr->next;
-				curr->next->prev = curr->prev;
+				if (len - 1 == index)
+					curr->prev->next = curr->next;
+				else
+				{
+					curr->prev->next = curr->next;
+					curr->next->prev = curr->prev;
+				}
+				free(tmp);
+				return (1);
 			}
 			curr = curr->next;
 			iter_times++;
@@ -69,30 +76,12 @@ size_t dlistint_len(const dlistint_t *h)
 
 int deleteFirstNode(dlistint_t **head)
 {
-	dlistint_t *curr = *head;
+	dlistint_t *curr = *head, *tmp = NULL;
 
+	tmp = curr;
 	curr = curr->next;
 	curr->prev = (*head)->prev;
 	*head = curr;
-	return (1);
-}
-
-/**
- * deleteLastNode - Function to return first node
- *
- * @head: the head for doubly linked list
- * Return: Always 1 (Success)
- */
-
-int deleteLastNode(dlistint_t **head)
-{
-	dlistint_t *curr = *head;
-
-	while (curr->next != NULL)
-		curr = curr->next;
-	curr->next = NULL;
-	curr->prev = NULL;
-	curr->prev->next = NULL;
-	free(curr);
+	free(tmp);
 	return (1);
 }
